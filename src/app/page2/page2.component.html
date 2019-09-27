@@ -1,1 +1,9 @@
-<p>page2 works!</p>
+<h2>PDF Viewer</h2>
+<button (click)="print()">Print</button>
+<button (click)="print2()">Print 2</button>
+<div class="pdf-container">
+  <pdf-viewer [src]="src"
+              [original-size]="false"
+  ></pdf-viewer>
+
+</div>
