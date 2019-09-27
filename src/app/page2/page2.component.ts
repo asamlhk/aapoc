@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import printJS from 'print-js';
+import { AdobeAnalyticService } from '../adobe-analytic.service';
 
 @Component({
   selector: 'app-page2',
@@ -10,10 +11,12 @@ export class Page2Component implements OnInit {
   src = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
 
   print() {
+    this.adobeSvc.trackEvent('print with printjs');
     printJS(this.src);
   }
 
   print2() {
+    this.adobeSvc.trackEvent('print with canvas');
     const pageNumber = 3;
     let dataurl = [];
     for (let i = 1; i <= pageNumber; i++) {
@@ -44,7 +47,7 @@ export class Page2Component implements OnInit {
       printWin.close();
     }, true);
   }
-  constructor() { }
+  constructor(private adobeSvc: AdobeAnalyticService) { }
 
   ngOnInit() {
   }
