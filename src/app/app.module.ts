@@ -7,6 +7,7 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { AdobeGuardService } from './adobe-guard.service'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { BinputDirective } from './binput.directive';
 
 const appRoutes: Routes = [
   { path: 'page1', component: Page1Component, canActivate: [AdobeGuardService], },
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     Page1Component,
-    Page2Component
+    Page2Component,
+    BinputDirective
   ],
   imports: [
     BrowserModule,
