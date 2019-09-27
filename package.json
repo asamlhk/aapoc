@@ -23,6 +23,7 @@
     "@angular/router": "~8.1.0",
     "@angular/service-worker": "~8.1.0",
     "ng2-pdf-viewer": "^5.3.4",
+    "ngx-image-cropper": "^2.0.0",
     "ngx-webcam": "^0.2.6",
     "print-js": "^1.0.61",
     "rxjs": "~6.4.0",

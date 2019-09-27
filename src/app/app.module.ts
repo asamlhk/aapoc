@@ -13,6 +13,8 @@ import { WebcamModule } from 'ngx-webcam';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ImageCropperModule } from 'ngx-image-cropper';
+
 const appRoutes: Routes = [
   { path: 'page1', component: Page1Component, canActivate: [AdobeGuardService], },
   { path: 'page2', component: Page2Component, canActivate: [AdobeGuardService], },
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     PdfViewerModule,
     WebcamModule,
+    ImageCropperModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
