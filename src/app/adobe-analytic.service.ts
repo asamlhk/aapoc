@@ -10,12 +10,12 @@ export class AdobeAnalyticService {
   public trackPage(path) {
 
     window['DataLayer'] = {
-      pagename: path
+      pageName: path
     };
     console.log('page track:' + path)
     window['_satellite'].pageBottom();
 
-    window['_satellite'].track("TrackPageView")
+    window['_satellite'].track("TrackPageview")
 
   }
 
