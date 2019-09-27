@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import printJS from 'print-js';
+import * as printJS from 'print-js';
 import { AdobeAnalyticService } from '../adobe-analytic.service';
 
 @Component({

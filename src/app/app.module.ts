@@ -29,7 +29,11 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: Window, useValue: window
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

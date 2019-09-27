@@ -5,27 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class AdobeAnalyticService {
 
-  constructor() { }
+  constructor(private window: Window) { }
 
   public trackPage(path) {
+ 
+    this.window['DataLayer'] = {
+      pagename: path
+    };
 
-    window['DataLayer'] = {
-      'pagename': path
-    }
-    //window.TrackPageView();
-    console.log(window['_satellite']);
-    window['_satellite'].pageBottom();
-    //window['_satellite'].trackEvent();
-    window['_satellite'].track("TrackPageView")
+    this.window['_satellite'].pageBottom();
 
-
-    //window['_satellite'].track('trackpageview');
+    this.window['_satellite'].track("TrackPageView")
 
   }
 
   public trackEvent(event) {
     //console.log(event);
-    window['DataLayer'] =
+    this.window['DataLayer'] =
       {
         'distributortype': 'agency',
         'advisorid': 'sample-agentid',
@@ -36,10 +32,9 @@ export class AdobeAnalyticService {
         'event_category': 'sample event cate',
         'event_type': 'sample event type',
         'event_label': event
-      }
-    console.log('trackevent', window['DataLayer'])
-    window['_satellite'].track("TrackEvent")
-    //window['_satellite'].TrackEvent();
+      };
+
+      this.window['_satellite'].track("TrackEvent");
   }
 
 }
