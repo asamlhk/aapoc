@@ -11,6 +11,8 @@ import { BinputDirective } from './binput.directive';
 import { Page3Component } from './page3/page3.component';
 import { WebcamModule } from 'ngx-webcam';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 const appRoutes: Routes = [
   { path: 'page1', component: Page1Component, canActivate: [AdobeGuardService], },
   { path: 'page2', component: Page2Component, canActivate: [AdobeGuardService], },
@@ -35,12 +37,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [
-    {
-      provide: Window, useValue: window
-    }
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

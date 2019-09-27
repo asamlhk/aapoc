@@ -5,23 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class AdobeAnalyticService {
 
-  constructor(private window: Window) { }
+  constructor() { }
 
   public trackPage(path) {
- 
-    this.window['DataLayer'] = {
+
+    window['DataLayer'] = {
       pagename: path
     };
+    console.log('page track:' + path)
+    window['_satellite'].pageBottom();
 
-    this.window['_satellite'].pageBottom();
-
-    this.window['_satellite'].track("TrackPageView")
+    window['_satellite'].track("TrackPageView")
 
   }
 
   public trackEvent(event) {
     //console.log(event);
-    this.window['DataLayer'] =
+    window['DataLayer'] =
       {
         'distributortype': 'agency',
         'advisorid': 'sample-agentid',
@@ -33,8 +33,9 @@ export class AdobeAnalyticService {
         'event_type': 'sample event type',
         'event_label': event
       };
+      console.log('event track' + event)
 
-      this.window['_satellite'].track("TrackEvent");
+    window['_satellite'].track("TrackEvent");
   }
 
 }
