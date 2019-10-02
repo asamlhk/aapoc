@@ -14,19 +14,16 @@ export class AdobeAnalyticService {
   }
 
   public trackPage(path) {
-    console.log(this.window)
+    console.log(this.window);
     this.window.DataLayer = {
       pageName: path
     };
     console.log('page track:' + path);
     this.satellite.pageBottom();
-
     this.satellite.track('TrackPageView');
-
   }
 
   public trackEvent(event) {
-    //console.log(event);
     this.window.DataLayer = {
       distributortype: 'agency',
       advisorid: 'sample-agentid',
@@ -39,7 +36,6 @@ export class AdobeAnalyticService {
       event_label: event
     };
     console.log('event track' + event);
-
     this.satellite.track('TrackEvent');
   }
 
