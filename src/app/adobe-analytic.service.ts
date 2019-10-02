@@ -1,42 +1,46 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { DOCUMENT } from '../../node_modules/@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdobeAnalyticService {
+  window;
+  satellite;
 
-  constructor() {
-
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.window = this.document.defaultView;
+    this.satellite = this.window._satellite;
   }
 
   public trackPage(path) {
-    window['DataLayer'] = {
+    console.log(this.window)
+    this.window.DataLayer = {
       pageName: path
     };
-    console.log('page track:' + path)
-    window['_satellite'].pageBottom();
+    console.log('page track:' + path);
+    this.satellite.pageBottom();
 
-    window['_satellite'].track("TrackPageView")
+    this.satellite.track('TrackPageView');
 
   }
 
   public trackEvent(event) {
     //console.log(event);
-    window['DataLayer'] =
-      {
-        'distributortype': 'agency',
-        'advisorid': 'sample-agentid',
-        'customerid': 'sample-customerid',
-        'referralid': 'sample-referralid',
-        'goals': 'goal1, goal2, goal3',
-        'ridertype': 'rider1, rider2, rider3',
-        'event_category': 'sample event cate',
-        'event_type': 'sample event type',
-        'event_label': event
-      };
-    console.log('event track' + event)
+    this.window.DataLayer = {
+      distributortype: 'agency',
+      advisorid: 'sample-agentid',
+      customerid: 'sample-customerid',
+      referralid: 'sample-referralid',
+      goals: 'goal1, goal2, goal3',
+      ridertype: 'rider1, rider2, rider3',
+      event_category: 'sample event cate',
+      event_type: 'sample event type',
+      event_label: event
+    };
+    console.log('event track' + event);
 
-    window['_satellite'].track("TrackEvent");
+    this.satellite.track('TrackEvent');
   }
 
 }
