@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AdobeAnalyticService } from './adobe-analytic.service';
 
 @Injectable({
@@ -8,8 +8,10 @@ import { AdobeAnalyticService } from './adobe-analytic.service';
 export class AdobeGuardService implements CanActivate {
 
   constructor(private adobeSvc: AdobeAnalyticService) { }
-  canActivate(data) {
-    const path = data.url[0].path;
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Promise<boolean> | boolean {
+    const path = next.url[0].path;
     this.adobeSvc.trackPage(path);
     return true;
   }

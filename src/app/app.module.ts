@@ -16,9 +16,18 @@ import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
 
 const appRoutes: Routes = [
-  { path: 'page1', component: Page1Component, canActivate: [AdobeGuardService], },
-  { path: 'page2', component: Page2Component, canActivate: [AdobeGuardService], },
-  { path: 'page3', component: Page3Component, canActivate: [AdobeGuardService], },
+  {
+    path: 'page1', component: Page1Component,
+    canActivate: [AdobeGuardService],
+  },
+  {
+    path: 'page2', component: Page2Component,
+    canActivate: [AdobeGuardService],
+  },
+  {
+    path: 'page3', component: Page3Component,
+    canActivate: [AdobeGuardService],
+  },
 ];
 
 @NgModule({
@@ -42,7 +51,8 @@ const appRoutes: Routes = [
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [ ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

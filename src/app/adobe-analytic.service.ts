@@ -5,17 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class AdobeAnalyticService {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   public trackPage(path) {
-
     window['DataLayer'] = {
       pageName: path
     };
     console.log('page track:' + path)
     window['_satellite'].pageBottom();
 
-    window['_satellite'].track("TrackPageview")
+    window['_satellite'].track("TrackPageView")
 
   }
 
@@ -33,7 +34,7 @@ export class AdobeAnalyticService {
         'event_type': 'sample event type',
         'event_label': event
       };
-      console.log('event track' + event)
+    console.log('event track' + event)
 
     window['_satellite'].track("TrackEvent");
   }
