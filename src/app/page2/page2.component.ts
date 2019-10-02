@@ -28,10 +28,6 @@ export class Page2Component implements OnInit {
     dataurl.forEach(
       d => windowContent += '<img src="' + d + '">'
     );
-
-
-
-
     const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
     printWin.document.open();
     printWin.document.write(windowContent);
