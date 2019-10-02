@@ -16,7 +16,7 @@ export class Page3Component implements OnInit {
   public multipleWebcamsAvailable = false;
   public deviceId: string;
   private imageChangedEvent: any = '';
-  private croppedImage: any = '';
+  public croppedImage: any = '';
 
   public videoOptions: MediaTrackConstraints = {
     width: {ideal: 1024},
