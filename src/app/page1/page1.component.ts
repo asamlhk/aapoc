@@ -7,15 +7,10 @@ import { AdobeAnalyticService } from '../adobe-analytic.service';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
-  value ='1234';
   constructor(private adobeSvc: AdobeAnalyticService) { }
-
   ngOnInit() {
   }
-
   click() {
     this.adobeSvc.trackEvent('testing event');
-
   }
-
 }
