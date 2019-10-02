@@ -23,15 +23,11 @@ export class Page2Component implements OnInit {
       const c: any = document.getElementById('page' + i);
       dataurl.push(c.toDataURL());
     }
-
-
     let windowContent = '<!DOCTYPE html>';
 
     dataurl.forEach(
-      d => {
-        windowContent += '<img src="' + d + '">';
-      }
-    )
+      d => windowContent += '<img src="' + d + '">'
+    );
 
 
 
