@@ -16,7 +16,6 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { MlAnalyticModule, MlAnalyticGuardService } from 'ml-analytic';
 import { MlAnalyticService } from 'projects/ml-analytic/src/public-api';
 
-
 const appRoutes: Routes = [
   {
     path: 'page1', component: Page1Component,
@@ -55,7 +54,9 @@ const appRoutes: Routes = [
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
-    MlAnalyticService
+    {
+      provide: 'analyticUrl', useValue: environment.anlayticUrl
+    },
   ],
   bootstrap: [AppComponent]
 })

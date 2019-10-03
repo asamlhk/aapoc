@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  anlayticUrl : '//assets.adobedtm.com/launch-EN23e9d69d68314fb4a99e61bc7e3ff367.min.js',
 };
 
 /*
