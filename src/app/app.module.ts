@@ -14,6 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { MlAnalyticModule, MlAnalyticGuardService } from 'ml-analytic';
+import { MlAnalyticService } from 'projects/ml-analytic/src/public-api';
 
 
 const appRoutes: Routes = [
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
+    MlAnalyticService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MlAnalyticService } from 'ml-analytic';
-
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',

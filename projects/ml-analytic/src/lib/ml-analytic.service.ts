@@ -15,19 +15,15 @@ export class MlAnalyticService {
   }
 
   public trackPage(path) {
-    console.log(this.window);
     this.window.DataLayer = {
       pageName: path
     };
-    console.log('page track:' + path);
+    console.log({pageTrack : this.window.DataLayer});
     this.satellite.pageBottom();
     this.satellite.track('TrackPageView');
-    this.satellite.cookie.set('cookie1', 'cookie1Value');
-    this.satellite.logger.info('testing info');
   }
 
   public trackEvent(event) {
-    console.log('track event');
     this.window.DataLayer = {
       distributortype: 'agency',
       advisorid: 'sample-agentid',
@@ -39,7 +35,9 @@ export class MlAnalyticService {
       event_type: 'sample event type',
       event_label: event
     };
-    console.log('event track' + event);
+    console.log({
+      eventTracking: this.window.DataLayer
+    });
     this.satellite.track('TrackEvent');
   }
 }

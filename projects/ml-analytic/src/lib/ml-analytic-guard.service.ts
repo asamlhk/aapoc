@@ -14,11 +14,7 @@ export class MlAnalyticGuardService implements CanActivate   {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean> | boolean {
     const path = next.url[0].path;
-    console.log(
-      {
-        trackpage: path
-      }
-    )
+ 
     this.svc.trackPage(path);
     return true;
   }
