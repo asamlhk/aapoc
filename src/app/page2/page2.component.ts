@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as printJS from 'print-js';
-import { AdobeAnalyticService } from '../adobe-analytic.service';
 
 @Component({
   selector: 'app-page2',
@@ -39,7 +38,7 @@ export class Page2Component implements OnInit {
       printWin.close();
     }, true);
   }
-  constructor(private adobeSvc: AdobeAnalyticService) { }
+  constructor() { }
 
   ngOnInit() {
   }

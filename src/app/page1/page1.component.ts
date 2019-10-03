@@ -9,7 +9,6 @@ import { MlAnalyticService } from 'ml-analytic';
 export class Page1Component implements OnInit {
   constructor(
     private svc: MlAnalyticService,
-    //private guard: MlAnalyticGuardService
 ) { }
   ngOnInit() {
      }
