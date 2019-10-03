@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MlAnalyticService } from 'ml-analytic';
+
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
@@ -8,9 +9,9 @@ import { MlAnalyticService } from 'ml-analytic';
 export class Page1Component implements OnInit {
   constructor(
     private svc: MlAnalyticService,
-) { }
+  ) { }
   ngOnInit() {
-     }
+  }
   click() {
     this.svc.trackEvent('testing event');
   }

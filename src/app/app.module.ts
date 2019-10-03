@@ -9,12 +9,14 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BinputDirective } from './binput.directive';
 import { Page3Component } from './page3/page3.component';
 import { WebcamModule } from 'ngx-webcam';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { MlAnalyticModule, MlAnalyticGuardService } from 'ml-analytic';
 import { MlAnalyticService } from 'projects/ml-analytic/src/public-api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GroupMaterialModule } from './material/material.module';
 
 const appRoutes: Routes = [
   {
@@ -37,10 +39,11 @@ const appRoutes: Routes = [
     Page1Component,
     Page2Component,
     BinputDirective,
-    Page3Component
+    Page3Component,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     PdfViewerModule,
@@ -52,6 +55,8 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    GroupMaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
