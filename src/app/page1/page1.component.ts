@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdobeAnalyticService } from '../adobe-analytic.service';
 import { MlAnalyticService } from 'ml-analytic';
 
 @Component({
@@ -9,7 +8,8 @@ import { MlAnalyticService } from 'ml-analytic';
 })
 export class Page1Component implements OnInit {
   constructor(
-    private svc: MlAnalyticService
+    private svc: MlAnalyticService,
+    //private guard: MlAnalyticGuardService
 ) { }
   ngOnInit() {
      }
