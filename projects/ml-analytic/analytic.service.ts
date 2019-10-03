@@ -4,7 +4,8 @@ import { DOCUMENT } from '../../node_modules/@angular/common';
 @Injectable({
   providedIn: 'root'
 })
-export class AdobeAnalyticService {
+export class AnalyticService {
+
   window;
   satellite;
 
@@ -26,6 +27,7 @@ export class AdobeAnalyticService {
   }
 
   public trackEvent(event) {
+    console.log('track event');
     this.window.DataLayer = {
       distributortype: 'agency',
       advisorid: 'sample-agentid',
@@ -40,5 +42,4 @@ export class AdobeAnalyticService {
     console.log('event track' + event);
     this.satellite.track('TrackEvent');
   }
-
 }

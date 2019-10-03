@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "ml-analytic": {
+      "projectType": "library",
+      "root": "projects/ml-analytic",
+      "sourceRoot": "projects/ml-analytic/src",
+      "prefix": "mla",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ml-analytic/tsconfig.lib.json",
+            "project": "projects/ml-analytic/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ml-analytic/src/test.ts",
+            "tsConfig": "projects/ml-analytic/tsconfig.spec.json",
+            "karmaConfig": "projects/ml-analytic/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ml-analytic/tsconfig.lib.json",
+              "projects/ml-analytic/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "analyticPoC"
 }

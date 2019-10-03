@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdobeAnalyticService } from '../adobe-analytic.service';
+import { MlAnalyticService } from 'ml-analytic';
 
 @Component({
   selector: 'app-page1',
@@ -7,10 +8,12 @@ import { AdobeAnalyticService } from '../adobe-analytic.service';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
-  constructor(private adobeSvc: AdobeAnalyticService) { }
+  constructor(
+    private svc: MlAnalyticService
+) { }
   ngOnInit() {
-  }
+     }
   click() {
-    this.adobeSvc.trackEvent('testing event');
+    this.svc.trackEvent('testing event');
   }
 }

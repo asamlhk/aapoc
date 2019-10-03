@@ -1,14 +1,15 @@
 import { Injectable, Inject } from '@angular/core';
-import { DOCUMENT } from '../../node_modules/@angular/common';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdobeAnalyticService {
+export class MlAnalyticService {
+
   window;
   satellite;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private document: any) {
     this.window = this.document.defaultView;
     this.satellite = this.window._satellite;
   }
@@ -26,6 +27,7 @@ export class AdobeAnalyticService {
   }
 
   public trackEvent(event) {
+    console.log('track event');
     this.window.DataLayer = {
       distributortype: 'agency',
       advisorid: 'sample-agentid',
@@ -40,5 +42,4 @@ export class AdobeAnalyticService {
     console.log('event track' + event);
     this.satellite.track('TrackEvent');
   }
-
 }

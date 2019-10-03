@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ml-analytic": [
+        "dist/ml-analytic"
+      ],
+      "ml-analytic/*": [
+        "dist/ml-analytic/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

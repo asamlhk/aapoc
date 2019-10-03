@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { MlAnalyticModule } from 'ml-analytic';
+
 
 const appRoutes: Routes = [
   {
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     PdfViewerModule,
     WebcamModule,
     ImageCropperModule,
+    MlAnalyticModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
