@@ -57,7 +57,10 @@ const appRoutes: Routes = [
     {
       provide: 'analyticUrl', useValue: environment.anlayticUrl
     },
+    MlAnalyticService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+  ]
 })
 export class AppModule { }
