@@ -1,8 +1,32 @@
-<h1>Angular Router</h1>
+<div class="header">
+	Heading
+	
+</div>
+<div style="display:flex" id="main">
+	<nav style="width: 300px" id="nav">
+		<ul>
+			<li>
+				<a routerLink="/page1" routerLinkActive="active">Burmese Input</a>
+			</li>
+			<li>
+				<a routerLink="/page2" routerLinkActive="active">Print PDF</a>
+			</li>
+			<li>
+				<a routerLink="/page3" routerLinkActive="active">Web Image Capture</a>
+			</li>
+			<li>
+				<a routerLink="/page4" routerLinkActive="active">Full Screen</a>
+			</li>
+		</ul>
 
-<nav>
-	[<a routerLink="/page1" routerLinkActive="active">Burmese Input</a>]
-	[<a routerLink="/page2" routerLinkActive="active">Print PDF</a>]
-	[<a routerLink="/page3" routerLinkActive="active">Web Image Capture</a>]
-</nav>
-<router-outlet></router-outlet>
+	</nav>
+	<div #contentArea id="content">
+		<router-outlet>
+
+		</router-outlet>
+	</div>
+
+</div>
+<div class="footer">
+
+</div>

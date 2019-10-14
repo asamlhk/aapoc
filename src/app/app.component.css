@@ -1,0 +1,46 @@
+#main {
+    height: 80vh;
+    background-color: #999999;
+    position: fixed;
+    top: 10vh;
+    width: 100%;
+    overflow: scroll;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+#nav {
+    position: fixed;
+    top: 10vh;
+    width: 20vw;
+    overflow: scroll;
+}
+
+#content {
+    position: relative;
+    left: 20vw;
+    width: 80vw;
+    overflow: scroll;
+    background-color: #556677;
+}
+
+.header {
+    background-color: #807080;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.footer {
+    height: 10vh;
+    background-color: #706080;
+    position: fixed;
+    
+    bottom: 0vh;
+    z-index: 1;
+    width: 100%;
+}

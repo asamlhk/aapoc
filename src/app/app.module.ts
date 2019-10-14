@@ -17,6 +17,8 @@ import { MlAnalyticModule, MlAnalyticGuardService } from 'ml-analytic';
 import { MlAnalyticService } from 'projects/ml-analytic/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GroupMaterialModule } from './material/material.module';
+import { Page4Component } from './page4/page4.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   {
@@ -31,6 +33,9 @@ const appRoutes: Routes = [
     path: 'page3', component: Page3Component,
     canActivate: [MlAnalyticGuardService],
   },
+  {
+    path: 'page4', component: Page4Component
+  }
 ];
 
 @NgModule({
@@ -40,6 +45,8 @@ const appRoutes: Routes = [
     Page2Component,
     BinputDirective,
     Page3Component,
+    Page4Component,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,12 @@ const appRoutes: Routes = [
     MlAnalyticModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      {
+        enableTracing: false,
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+        scrollOffset: [0, 100],
+      } // <-- debugging purposes only,
     ),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     GroupMaterialModule,
