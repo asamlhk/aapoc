@@ -19,6 +19,7 @@ nav {
 }
 
 #content {
+    padding: 10px;
     position: relative;
     left: 20vw;
     width: 80vw;
