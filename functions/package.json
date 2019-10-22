@@ -1,0 +1,20 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fdsafdsa",
+  "scripts": {
+    "test": "fsadfsa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "fasfdsa"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^8.6.1",
+    "firebase-functions": "^3.3.0",
+    "json-server": "^0.15.1"
+  }
+}

@@ -1,59 +1,16 @@
 {
-  "hero": [
+  "posts": [
     {
-      "name": "Asa",
-      "id": 1
-    },
-    {
-      "name": "Asa",
-      "id": 2
-    },
-    {
-      "name": "Asa",
-      "id": 4
-    },
-    {
-      "name": "Asa",
-      "id": 6
-    },
-    {
-      "name": "Asa",
-      "id": 7
-    },
-    {
-      "name": "Asa",
-      "id": 9
-    },
-    {
-      "name": "Asa",
-      "id": 10
-    },
-    {
-      "name": "Asa",
-      "id": 11
-    },
-    {
-      "name": "Asa",
-      "id": 12
-    },
-    {
-      "name": "Asa",
-      "id": 13
-    },
-    {
-      "name": "Asa",
-      "id": 14
-    },
-    {
-      "name": "Asa",
-      "id": 15
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
     }
   ],
   "comments": [
     {
       "id": 1,
       "body": "some comment",
-      "heroId": 1
+      "postId": 1
     }
   ],
   "profile": {
