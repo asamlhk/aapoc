@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { MliAnalyticsService } from '@mli/analytics';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
 
 
   constructor(
-    private router: Router
+    private router: Router,
+    private mliAnalytics: MliAnalyticsService
   ) {
+    this.mliAnalytics.enableAutoPageTracking();
     this.router.events.forEach(
       e => {
-        console.log(e);
-        console.log(this.contentArea);
       }
     );
   }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AddToHomeScreen } from "a2hs.js";
+import Compressor from "compressorjs";
 
 @Component({
   selector: 'app-page4',
@@ -7,7 +8,19 @@ import { AddToHomeScreen } from "a2hs.js";
   styleUrls: ['./page4.component.css']
 })
 export class Page4Component implements OnInit {
-
+  name = 'Angular';
+  @ViewChild('fileInput', {
+    static: true
+  })
+  fileInput: ElementRef;
+  data = {
+    originalFileSize: 0,
+    compressedFileSize: 0
+  };
+  img = {
+    origin: null,
+    compressed: null
+  };
   constructor() { }
 
   ngOnInit() {
@@ -44,7 +57,35 @@ export class Page4Component implements OnInit {
 
   fullscreen() {
     const w: any = window;
-    return "fullscreen:" + w.navigator.standalone;
+    return 'fullscreen:' + w.navigator.standalone;
+  }
+
+
+  selectFile = () => {
+    const file = this.fileInput.nativeElement.files[0];
+
+    const c = new Compressor(file, {
+      quality: 0.5,
+      success(result) {
+        globalThis.data = {
+          originalFileSize: file.size,
+          compressedFileSize: result.size
+        };
+
+        globalThis.img = {
+          origin: URL.createObjectURL(file),
+          compressed: URL.createObjectURL(result)
+        };
+
+        const oimg: any = globalThis.document.getElementById('originImg')
+        oimg.src = URL.createObjectURL(file);
+        const cimg: any = globalThis.document.getElementById('compressedImg');
+        cimg.src = URL.createObjectURL(result);
+        //console.log(img1);
+      }
+    });
+
+    this.data = globalThis.data;
   }
 
 }

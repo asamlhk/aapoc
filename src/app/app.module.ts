@@ -13,30 +13,51 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { MlAnalyticModule, MlAnalyticGuardService } from 'ml-analytic';
-import { MlAnalyticService } from 'projects/ml-analytic/src/public-api';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GroupMaterialModule } from './material/material.module';
 import { Page4Component } from './page4/page4.component';
 import { HeaderComponent } from './header/header.component';
+import { MliAnalyticsModule } from '@mli/analytics';
+import { Page5Component } from './page5/page5.component';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { DefaultDataServiceConfig, EntityDataModule, EntityMetadataMap } from '@ngrx/data';
+
 
 const appRoutes: Routes = [
   {
     path: 'page1', component: Page1Component,
-    canActivate: [MlAnalyticGuardService],
+
   },
   {
     path: 'page2', component: Page2Component,
-    canActivate: [MlAnalyticGuardService],
+
   },
   {
     path: 'page3', component: Page3Component,
-    canActivate: [MlAnalyticGuardService],
+
   },
   {
     path: 'page4', component: Page4Component
+  },
+  {
+    path: 'page5', component: Page5Component
   }
 ];
+
+const entityMetadata: EntityMetadataMap = {
+  Hero: {},
+  Villain: {}
+};
+
+const pluralNames = { Hero: 'Hero' };
+
+const entityConfig = {
+  entityMetadata,
+  pluralNames
+};
 
 @NgModule({
   declarations: [
@@ -47,6 +68,7 @@ const appRoutes: Routes = [
     Page3Component,
     Page4Component,
     HeaderComponent,
+    Page5Component,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +78,6 @@ const appRoutes: Routes = [
     PdfViewerModule,
     WebcamModule,
     ImageCropperModule,
-    MlAnalyticModule,
     RouterModule.forRoot(
       appRoutes,
       {
@@ -69,12 +90,16 @@ const appRoutes: Routes = [
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     GroupMaterialModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot(entityConfig)
+    // MliAnalyticsModule.forRoot(environment.analyticUrl),
   ],
   providers: [
     {
-      provide: 'analyticUrl', useValue: environment.anlayticUrl
+      provide: 'analyticUrl', useValue: environment.analyticUrl
     },
-    MlAnalyticService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

@@ -1,4 +1,16 @@
-<p>page4 works!</p>
+ 
 <button (click)="toogle()">Full Screen</button>
 
+
 {{fullscreen()}}
+
+<h2>upload file</h2>
+<input type="file" accept="image/*;capture=camera"
+  (change)="selectFile()" #fileInput>
+
+ fileSize:{{data | json}}
+ 
+<h3>Original Image</h3>
+<img id="originImg">
+<h3>compressed Image</h3>
+<img id="compressedImg">
