@@ -24,6 +24,7 @@ export class Page5Component implements OnInit {
   }
 
   delete(id) {
+    console.log(id)
     this.ds.delete(id);
   }
 

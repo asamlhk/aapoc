@@ -1,7 +1,6 @@
-<button
-(click)="add({name:'Asa'});">Add</button>
-<button
-(click)="delete(1);">remove</button>
-<pre> 
-    {{heroes$ | async | json}}
-</pre>
+<button (click)="add({name:'Asa'});">Add</button>
+
+
+<p *ngFor="let i of heroes$ | async">{{i | json}}
+    <button (click)="delete(i.id);">remove</button>
+</p>
