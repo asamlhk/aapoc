@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from '../../../node_modules/rxjs';
-import { Hero } from '../hero';
+import { User } from '../models';
 
 @Component({
   selector: 'app-page5',
@@ -9,10 +9,10 @@ import { Hero } from '../hero';
   styleUrls: ['./page5.component.css']
 })
 export class Page5Component implements OnInit {
-  heroes$: Observable<Hero[]>;
+  users$: Observable<User[]>;
 
   constructor(private ds: DataService) {
-    this.heroes$ = ds.entities$;
+    this.users$ = ds.entities$;
   }
 
   ngOnInit() {

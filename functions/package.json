@@ -2,7 +2,7 @@
   "name": "clear",
   "version": "1.0.0",
   "description": "",
-  "main": "fdsafdsa",
+  "main": "addMessage",
   "scripts": {
     "test": "fsadfsa"
   },

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MlAnalyticService } from 'ml-analytic';
+import { MliAnalyticsService } from '@mli/analytics';
 
 @Component({
   selector: 'app-page1',
@@ -7,17 +7,17 @@ import { MlAnalyticService } from 'ml-analytic';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
-  foods  = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+  foods = [
+    { value: 'steak-0', viewValue: 'Steak' },
+    { value: 'pizza-1', viewValue: 'Pizza' },
+    { value: 'tacos-2', viewValue: 'Tacos' }
   ];
   constructor(
-    private svc: MlAnalyticService,
+    private svc: MliAnalyticsService,
   ) { }
   ngOnInit() {
   }
   click() {
-    this.svc.trackEvent('testing event');
+    //this.svc.trackEvent('testing event');
   }
 }

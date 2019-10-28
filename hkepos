@@ -1,0 +1,6 @@
+epos-hk-angular-app
+release/hk/HK-SIT
+git submodule update --init --recursive
+NPM RUN STARTCOUNTRY
+http-interceptor.ts
+open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security

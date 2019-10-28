@@ -3,7 +3,7 @@ import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
-import { Hero } from './hero';
+import { Hero } from './models';
 
 @Injectable({
   providedIn: 'root'

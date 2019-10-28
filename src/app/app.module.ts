@@ -24,7 +24,7 @@ import { Page5Component } from './page5/page5.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { DefaultDataServiceConfig, EntityDataModule, EntityMetadataMap } from '@ngrx/data';
-
+import { Hero, entityConfig } from './models';
 
 const appRoutes: Routes = [
   {
@@ -46,18 +46,6 @@ const appRoutes: Routes = [
     path: 'page5', component: Page5Component
   }
 ];
-
-const entityMetadata: EntityMetadataMap = {
-  Hero: {},
-  Villain: {}
-};
-
-const pluralNames = { Hero: 'Hero' };
-
-const entityConfig = {
-  entityMetadata,
-  pluralNames
-};
 
 @NgModule({
   declarations: [
