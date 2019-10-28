@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from '../../../node_modules/rxjs';
-import { User } from '../models';
+
 
 @Component({
   selector: 'app-page5',
@@ -9,10 +9,10 @@ import { User } from '../models';
   styleUrls: ['./page5.component.css']
 })
 export class Page5Component implements OnInit {
-  users$: Observable<User[]>;
+  //users$: Observable<User[]>;
 
   constructor(private ds: DataService) {
-    this.users$ = ds.entities$;
+    //this.users$ = ds.entities$;
   }
 
   ngOnInit() {
@@ -24,7 +24,6 @@ export class Page5Component implements OnInit {
   }
 
   delete(id) {
-    console.log(id)
     this.ds.delete(id);
   }
 

@@ -19,8 +19,8 @@ export class Page3Component implements OnInit {
   public croppedImage: any = '';
 
   public videoOptions: MediaTrackConstraints = {
-    width: {ideal: 1024},
-    height: {ideal: 576}
+    width: { ideal: 1024 },
+    height: { ideal: 576 }
   };
   public errors: WebcamInitError[] = [];
 
@@ -33,19 +33,19 @@ export class Page3Component implements OnInit {
   private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
   fileChangeEvent(event: any): void {
-      this.imageChangedEvent = event;
+    this.imageChangedEvent = event;
   }
   imageCropped(event: ImageCroppedEvent) {
-      this.croppedImage = event.base64;
+    this.croppedImage = event.base64;
   }
   imageLoaded() {
-      // show cropper
+    // show cropper
   }
   cropperReady() {
-      // cropper ready
+    // cropper ready
   }
   loadImageFailed() {
-      // show message
+    // show message
   }
 
 
@@ -76,7 +76,7 @@ export class Page3Component implements OnInit {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
-    console.info('received webcam image', webcamImage);
+
     this.webcamImage = webcamImage;
   }
 
