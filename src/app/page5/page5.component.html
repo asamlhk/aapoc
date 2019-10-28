@@ -1,6 +1,7 @@
 <button (click)="add({name:'Asa'});">Add</button>
 
 
-<p *ngFor="let i of heroes$ | async">{{i | json}}
+<p *ngFor="let i of users$ | async"> 
+    {{i.name}}
     <button (click)="delete(i.id);">remove</button>
 </p>

@@ -13,6 +13,32 @@
       "postId": 1
     }
   ],
+  "hero": [
+    {
+      "name": "Asa",
+      "id": 1
+    },
+    {
+      "name": "Asa",
+      "id": 2
+    },
+    {
+      "name": "Asa",
+      "id": 3
+    },
+    {
+      "name": "Asa",
+      "id": 4
+    },
+    {
+      "name": "Asa",
+      "id": 5
+    },
+    {
+      "name": "Asa",
+      "id": 6
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
